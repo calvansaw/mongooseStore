@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('./partials/head.ejs')%>
+	</head>
+	<body>
+		<h1>Edit Product</h1>
+		<div>
+			<form action="/store/<%=productObj._id%>?_method=PUT" method="POST">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" value="<%=productObj.name%>" />
+				<label for="description">Description</label>
+				<input type="text" name="description" id="description" value="<%=productObj.description%>" />
+				<label for="img">Image</label>
+				<input type="text" name="img" id="img" value="<%=productObj.img%>" />
+				<label for="price">Price</label>
+				<input type="number" name="price" id="price" value="<%=productObj.price%>" />
+				<label for="qty">Quantity</label>
+				<input type="number" name="qty" id="qty" value="<%=productObj.qty%>" />
+				<input type="submit" value="Edit Product" />
+			</form>
+		</div>
+        <nav><a href="/store/<%=productObj._id%>">BACK</a></nav>
+	</body>
+</html>

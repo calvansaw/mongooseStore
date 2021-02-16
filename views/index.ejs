@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('./partials/head.ejs')%>
+	</head>
+	<body>
+		<div>
+			<h1>Store - Index page</h1>
+			<ul>
+				<%allProducts.forEach(product => {%>
+                    <li> <a href="/store/<%=product._id%>"><img src="<%=product.img%>" alt="<%=product.name%>"/></a> </li>
+                    <li> <%=product.name%></li>
+                <%});%>
+			</ul>
+		</div>
+        <nav><a href="/store/new">Create New Products!</a></nav>
+	</body>
+</html>

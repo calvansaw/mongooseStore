@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('./partials/head.ejs')%>
+	</head>
+	<body>
+		<h1>A specific product - Show page</h1>
+		<div>
+			<ul>
+				<li>
+					<img src="<%=productObj.img%>" alt="<%=productObj.name%>" />
+				</li>
+				<li><%=productObj.name%></li>
+				<li><%=productObj.description%></li>
+				<li><%=productObj.price%></li>
+				<li><%=productObj.qty%></li>
+			</ul>
+		</div>
+		<form action="/store/<%=productObj._id%>/buy?_method=PUT" method="POST">
+			<label for="amt">Amount</label>
+			<input type="number" name="qty" id="amt">
+			<input type="submit" value="BUY">
+		</form>
+		<nav><a href="/store/<%=productObj._id%>/edit">EDIT</a></nav>
+		<form action="/store/<%=productObj._id%>?_method=DELETE" method="POST">
+			<input type="submit" value="DELETE" />
+		</form>
+		<nav><a href="/store">BACK</a></nav>
+	</body>
+</html>
